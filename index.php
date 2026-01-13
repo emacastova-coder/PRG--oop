@@ -9,16 +9,18 @@ $farm = new Farm(
     "Ovoce"
 );
 
-$jahoda = new Fruit(
+$jahoda = new Tropical(
     "Jahody",
     True,
-    125
+    125,
+    "tropical fruit"
 );
 
-$boruvky = new Fruit(
+$boruvky = new Berry(
     "Borůvky",
     False,
-    250
+    250,
+    "a berry"
 );
 
 $jahoda->grow();
@@ -36,5 +38,6 @@ echo "Zásoby: " . ($farm->products ? "Ano" : "Ne") . "<br></br>";
 foreach ($farm->products as $fruit) {
     echo "Product: {$fruit->name} </br>";
     echo "Čerstvost: " . ($fruit->freshness ? "Ano" : "Ne") . "</br>";
-    echo "Balení: {$fruit->packageGrams} <br></br>";
+    echo "Balení: {$fruit->packageGrams} <br>";
+    echo "Specialita: {$fruit->action()} <br></br>";
 }
